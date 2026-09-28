@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ironfront — 3D RTS Prototype</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game"></div>
+  <div id="hud">
+    <div class="topbar">
+      <div class="brand">IRONFRONT <span>COMMAND</span></div>
+      <div class="resources">
+        <div><b>IRON</b><span id="iron">600</span></div>
+        <div><b>FUEL</b><span id="fuel">300</span></div>
+        <div><b>POWER</b><span id="power">120</span></div>
+        <div><b>POP</b><span id="pop">4 / 30</span></div>
+      </div>
+      <div class="clock"><span id="phase">DAY</span> <span id="timer">00:00</span></div>
+    </div>
+
+    <div id="selection" class="panel hidden">
+      <div id="selName">Nothing selected</div>
+      <div id="selInfo"></div>
+    </div>
+
+    <div id="build" class="panel">
+      <div class="panel-title">BUILD</div>
+      <button data-build="hq">HQ <small>300 IRON</small></button>
+      <button data-build="house">BARRACKS <small>120 IRON</small></button>
+      <button data-build="factory">FACTORY <small>220 IRON / 80 FUEL</small></button>
+      <button data-build="power">POWER PLANT <small>140 IRON</small></button>
+      <button data-build="mine">IRON MINE <small>100 IRON</small></button>
+      <button data-build="refinery">REFINERY <small>120 IRON</small></button>
+      <div class="hint">Click a build button, then click the terrain.</div>
+    </div>
+
+    <div id="army" class="panel">
+      <div class="panel-title">ARMY</div>
+      <button data-unit="rifle">RIFLEMAN <small>40 IRON</small></button>
+      <button data-unit="tank">TANK <small>120 IRON / 40 FUEL</small></button>
+      <button data-unit="artillery">ARTILLERY <small>160 IRON / 60 FUEL</small></button>
+      <div class="hint">Select units, then right-click to move or attack.</div>
+    </div>
+
+    <div id="objectives" class="panel">
+      <div class="panel-title">MISSION</div>
+      <div id="objectiveText">Establish your city and destroy the enemy command post.</div>
+      <div class="bar"><i id="enemyBar"></i></div>
+      <div class="small">Enemy HQ integrity</div>
+    </div>
+
+    <div id="toast"></div>
+    <div id="minimap"><canvas id="miniCanvas" width="180" height="120"></canvas></div>
+    <div id="controls">WASD / arrows: camera · Wheel: zoom · Drag: pan · Left click: select · Right click: command · ESC: cancel</div>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
